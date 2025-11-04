@@ -1,3 +1,4 @@
+/* fuentes */
 @font-face {
     font-family: 'OTGW';
     src: url("assets/Tomeoftheunknown-3gL3.ttf");
@@ -7,6 +8,8 @@
     font-family: 'LightsOut';
     src: url("assets/LightsOut-8KyD.ttf");
 }
+
+/* estilos globales */
 
 body {
     background-image: url("assets/img.jpg");
@@ -20,20 +23,28 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Previene scroll lateral en móviles */
 }
 
 main {
-  flex: 1;
+    flex: 1;
 }
 
 /* Ajustes responsive de fondo */
 @media screen and (max-width: 768px) {
     body {
         background-position: top center;
+        background-attachment: scroll; /* Evita bug en móviles */
     }
 }
 
-/* LOGO */
+/* Arregla posibles desbordes por sombras o transformaciones */
+* {
+    box-sizing: border-box;
+}
+
+/* "header" */
+
 .logo {
     display: block;
     position: relative;
@@ -43,7 +54,6 @@ main {
     transition: max-width 0.3s ease;
 }
 
-/* PORTADA */
 h1 {
     text-align: center;
     color: rgb(42, 22, 0);
@@ -59,7 +69,8 @@ h1 {
     width: fit-content;
 }
 
-/* FORMULARIO */
+/* formulario */
+
 .formulario {
     display: flex;
     flex-direction: column;
@@ -78,7 +89,7 @@ h1 {
     text-align: center;
 }
 
-.formulario input {
+.formulario input, .formulario select {
     font-family: "LightsOut";
     font-size: large;
     font-weight: 800;
@@ -88,10 +99,6 @@ h1 {
 }
 
 .formulario select {
-    background-color: blanchedalmond;
-    font-family: "LightsOut";
-    font-size: large;
-    font-weight: 800;
     border-radius: 7px;
 }
 
@@ -99,7 +106,8 @@ h1 {
     font-weight: 600;
 }
 
-/* DROPDOWN */
+/* dropdown */
+
 .dropdown-form {
     display: flex;
     flex-direction: column;
@@ -129,7 +137,8 @@ h1 {
     display: none;
 }
 
-/* LISTA DE CANCIONES */
+/* lista */
+
 .lista-canciones {
     display: flex;
     flex-wrap: wrap;
@@ -138,7 +147,8 @@ h1 {
     margin: 2rem;
 }
 
-/* TARJETA */
+/* tarjetas canciones */
+
 .cancion-card {
     border-radius: 1rem;
     padding: 1rem;
@@ -151,6 +161,7 @@ h1 {
     transition: transform 0.2s ease;
     max-width: 400px;
     width: 100%;
+    text-align: center;
 }
 
 .cancion-card:hover {
@@ -169,17 +180,20 @@ h1 {
     font-size: larger;
 }
 
-.cancion-card iframe {
-    margin-top: 1rem;
-    width: 100%;
-    min-height: 80px;
-}
-
 .cancion-card img {
     width: 90px;
 }
 
-/* BOTÓN ELIMINAR */
+/* Ajuste para iframes de Spotify */
+.cancion-card iframe {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+/* boton eliminar canciones */
 .eliminar-btn {
     background: none;
     border: none;
@@ -195,29 +209,29 @@ h1 {
     color: antiquewhite;
 }
 
-/* CONTROLES DE AUDIO */
+/* controles audio */
+
 .control-audio {
     margin-top: 0.5rem;
-    font-family: "LightsOut";
 }
 
-/* FOOTER */
+/* footer */
+
 footer {
-  background: linear-gradient(to top, rgba(15, 9, 0, 0.539), rgba(15, 9, 0, 0.539), #7c360000);
-  color: rgba(255, 199, 116, 0.901);
-  text-align: center;
-  padding: 0.8rem 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  font-family: "LightsOut";
-  flex-wrap: wrap;
+    background: linear-gradient(to top, rgba(15, 9, 0, 0.539), rgba(15, 9, 0, 0.539), #7c360000);
+    color: rgba(255, 199, 116, 0.901);
+    text-align: center;
+    padding: 0.8rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: "LightsOut";
+    flex-wrap: wrap;
 }
 
 .footer1 {
-    font-family: "LightsOut";
     margin-right: 5px;
 }
 
@@ -229,51 +243,44 @@ footer {
     top: 1.2px;
 }
 
-/* NOTIFICACIÓN */
+/* notificacion */
+
 .notificacion {
-  position: fixed;
-  top: 30px;
-  right: 20px;
-  background: rgba(48, 29, 0, 0.856);
-  font-family: "LightsOut"; 
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: rgb(250, 242, 230);
-  padding: 12px 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(15px);
-  z-index: 9999;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    background: rgba(48, 29, 0, 0.856);
+    font-family: "LightsOut"; 
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgb(250, 242, 230);
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(15px);
+    z-index: 9999;
 }
 
 .notificacion.mostrar {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* 📱 RESPONSIVE */
+/* escala para movil */
+
 @media screen and (max-width: 768px) {
     .logo {
         max-width: 80%;
         width: auto;
+        margin: 1.5rem auto 0 auto;
+        max-width: min(85%, 400px);
     }
 
     h1 {
         font-size: 1.8rem;
-        margin: 1rem auto;
-        text-align: center;
-        width: fit-content;
         max-width: 85%;
-    }
-
-    /* 🔗 hace que el logo no sea más ancho que el título */
-    .logo {
-        display: block;
-        margin: 1.5rem auto 0 auto;
-        width: 100%;
-        max-width: min(85%, 400px);
     }
 
     .formulario {
@@ -290,29 +297,15 @@ footer {
     .cancion-card {
         width: 90%;
         max-width: 400px;
-        text-align: center;
+    }
+
+    .cancion-card iframe {
+        width: 100%;
+        max-width: 100%;
     }
 
     footer {
         padding: 1rem;
         font-size: 0.9rem;
     }
-}
-
-/* 🧭 Previene scroll lateral en móviles */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* Arregla posibles desbordes por sombras o transformaciones */
-* {
-  box-sizing: border-box;
-}
-
-/* Evita bug del background fixed en algunos navegadores móviles */
-@media screen and (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
 }
