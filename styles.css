@@ -298,3 +298,21 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* 🧭 Previene scroll lateral en móviles */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Arregla posibles desbordes por sombras o transformaciones */
+* {
+  box-sizing: border-box;
+}
+
+/* Evita bug del background fixed en algunos navegadores móviles */
+@media screen and (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
