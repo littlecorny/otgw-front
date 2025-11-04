@@ -1,6 +1,4 @@
-/* ===========================
-   FUENTES
-=========================== */
+/* FUENTES */
 @font-face {
     font-family: 'OTGW';
     src: url("assets/Tomeoftheunknown-3gL3.ttf");
@@ -11,11 +9,9 @@
     src: url("assets/LightsOut-8KyD.ttf");
 }
 
-/* ===========================
-   ESTILOS GLOBALES
-=========================== */
+/* ESTILOS GLOBALES */
 * {
-    box-sizing: border-box; /* arregla posibles desbordes */
+    box-sizing: border-box; /* evita desbordes por sombras o transformaciones */
 }
 
 body {
@@ -24,13 +20,13 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* evita scroll lateral */
-    font-family: "LightsOut";
+    overflow-x: hidden; /* previene scroll lateral en móviles */
 }
 
 main {
@@ -41,13 +37,11 @@ main {
 @media screen and (max-width: 768px) {
     body {
         background-position: top center;
-        background-attachment: scroll;
+        background-attachment: scroll; /* evita bug en móviles */
     }
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/* LOGO */
 .logo {
     display: block;
     margin: 2rem auto 0 auto;
@@ -56,10 +50,12 @@ main {
     transition: max-width 0.3s ease;
 }
 
+/* TITULO */
 h1 {
     text-align: center;
     color: rgb(42, 22, 0);
     margin: 1rem auto;
+    border-radius: 8px;
     font-size: 2.2rem;
     font-family: "LightsOut";
     text-shadow:
@@ -68,12 +64,9 @@ h1 {
         0 0 20px rgba(255, 189, 118, 0.6);
     max-width: 90%;
     width: fit-content;
-    border-radius: 8px;
 }
 
-/* ===========================
-   FORMULARIO
-=========================== */
+/* FORMULARIO */
 .formulario {
     display: flex;
     flex-direction: column;
@@ -81,6 +74,7 @@ h1 {
     width: 20rem;
     margin: 2rem auto;
     line-height: 0.75;
+    font-family: "LightsOut";
     font-weight: 900;
     color: rgba(42, 22, 0, 0.877);
 }
@@ -108,9 +102,7 @@ h1 {
     font-weight: 600;
 }
 
-/* ===========================
-   DROPDOWN
-=========================== */
+/* DROPDOWN */
 .dropdown-form {
     display: flex;
     flex-direction: column;
@@ -140,9 +132,7 @@ h1 {
     display: none;
 }
 
-/* ===========================
-   LISTA DE CANCIONES
-=========================== */
+/* LISTA DE CANCIONES */
 .lista-canciones {
     display: flex;
     flex-wrap: wrap;
@@ -151,17 +141,16 @@ h1 {
     margin: 2rem;
 }
 
-/* ===========================
-   TARJETAS DE CANCIONES
-=========================== */
+/* TARJETA DE CANCIONES */
 .cancion-card {
     border-radius: 1rem;
     padding: 1rem;
+    font-family: "LightsOut";
     color: rgb(250, 242, 230);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     background-color: rgba(71, 43, 0, 0.539);
     position: relative;
-    overflow: hidden; /* evita scroll horizontal */
+    overflow: hidden; /* corta cualquier exceso */
     transition: transform 0.2s ease;
     max-width: 400px;
     width: 100%;
@@ -188,25 +177,67 @@ h1 {
     width: 90px;
 }
 
-/* ===========================
-   SPOTIFY EMBEDS
-=========================== */
+/* WRAPPER Y AJUSTES IFRAME SPOTIFY */
 .spotify-wrapper {
     width: 100%;
     overflow: hidden; /* evita scroll lateral */
     position: relative;
+    height: 80px; /* altura del iframe */
 }
 
 .spotify-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 80px; /* ajustable */
+    height: 80px;
     border: 0;
-    display: block;
+    transform-origin: 0 0;
 }
 
-/* ===========================
-   BOTÓN ELIMINAR
-=========================== */
+@media screen and (max-width: 768px) {
+    .spotify-wrapper {
+        height: 68px;
+    }
+    .spotify-wrapper iframe {
+        transform: scale(0.85);
+        width: 117.6%; /* compensa el scale */
+        height: 68px;
+    }
+
+    .logo {
+        max-width: min(85%, 400px);
+        margin: 1.5rem auto 0 auto;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        max-width: 85%;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+
+    .lista-canciones {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        gap: 1.5rem;
+    }
+
+    .cancion-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* BOTÓN ELIMINAR */
 .eliminar-btn {
     background: none;
     border: none;
@@ -222,16 +253,12 @@ h1 {
     color: antiquewhite;
 }
 
-/* ===========================
-   CONTROLES DE AUDIO
-=========================== */
+/* CONTROLES AUDIO */
 .control-audio {
     margin-top: 0.5rem;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/* FOOTER */
 footer {
     background: linear-gradient(to top, rgba(15, 9, 0, 0.539), rgba(15, 9, 0, 0.539), #7c360000);
     color: rgba(255, 199, 116, 0.901);
@@ -258,9 +285,7 @@ footer {
     top: 1.2px;
 }
 
-/* ===========================
-   NOTIFICACIÓN
-=========================== */
+/* NOTIFICACIÓN */
 .notificacion {
     position: fixed;
     top: 30px;
@@ -282,46 +307,4 @@ footer {
 .notificacion.mostrar {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* ===========================
-   RESPONSIVE MÓVIL
-=========================== */
-@media screen and (max-width: 768px) {
-
-    .logo {
-        margin: 1.5rem auto 0 auto;
-        width: 100%;
-        max-width: min(85%, 400px);
-    }
-
-    h1 {
-        font-size: 1.8rem;
-        max-width: 85%;
-    }
-
-    .formulario {
-        width: 90%;
-    }
-
-    .lista-canciones {
-        flex-direction: column;
-        align-items: center;
-        margin: 1rem;
-        gap: 1.5rem;
-    }
-
-    .cancion-card {
-        width: 90%;
-        max-width: 400px;
-    }
-
-    .spotify-wrapper iframe {
-        height: 68px; /* altura reducida en móvil */
-    }
-
-    footer {
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
 }
