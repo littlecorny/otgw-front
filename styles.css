@@ -159,7 +159,7 @@ h1 {
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease;
-    max-width: 400px;
+    max-width: 420px;
     width: 100%;
     text-align: center;
 }
@@ -186,11 +186,12 @@ h1 {
 
 /* Ajuste para iframes de Spotify */
 .cancion-card iframe {
-    width: auto;
+    width: 100%;
     max-width: 100%;
     min-height: 80px;
     box-sizing: border-box;
 }
+
 
 /* boton eliminar canciones */
 .eliminar-btn {
