@@ -186,7 +186,7 @@ h1 {
 
 /* Ajuste para iframes de Spotify */
 .cancion-card iframe {
-    width: 100%;
+    width: auto;
     max-width: 100%;
     min-height: 80px;
     box-sizing: border-box;
