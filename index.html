@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over the Garden Wall | Fanmade Music Library</title>
+  <link rel="icon" href="/assets/favicon.ico">
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <img class="logo" src="/assets/img2.webp">
+  <h1>Original Television Soundtrack</h1>
+
+  <!-- BOTÓN Y DROPDOWN -->
+  
+  <section class="dropdown-form">
+  <button id="toggleForm" class="dropdown-btn">Añadir canciones</button>
+    <div id="formContainer" class="formulario oculto">
+      <label for="cancion">Selecciona una cancion</label>
+      <select id="cancion" aria-placeholder="">
+        <option value="">Cargando canciones...</option>
+      </select> 
+    </div>
+  </section> 
+
+  <script src="/script-formulario.js"></script>
+  <div class="lista-canciones" id="listaCanciones"></div>
+  <script src="/script.js"></script>
+
+</body>
+
+<footer>
+  <p class="footer1">Carla Pajuelo Paniagua | "OTGW" Fanmade Music Library | <p class="footer2">&copy; 2025</p>
+</footer>
+
+</html>

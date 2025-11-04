@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'OTGW';
+    src: url("assets/Tomeoftheunknown-3gL3.ttf");
+}
+
+@font-face {
+    font-family: 'LightsOut';
+    src: url("assets/LightsOut-8KyD.ttf");
+}
+
+body {
+    background-image: url("/assets/img.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* Escala la imagen para cubrir todo el contenedor */
+    background-attachment: fixed;
+    /* Mantiene el fondo fijo al hacer scroll */
+    height: 100%;
+    /* Body y html ocupan toda la altura */
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-position: top center;
+        /* Ajusta el enfoque del fondo en móviles */
+    }
+}
+
+.logo {
+    display: block;
+    position: relative;
+    margin: 2rem auto;
+    margin-top: 3rem;
+    max-width: 300px;
+    filter: brightness(1.7);
+  
+}
+
+/* PORTADA */
+/* PORTADA */
+h1 {
+    text-align: center;
+    color: rgb(42, 22, 0);
+    margin: 1rem 13rem;
+    border-radius: 8px;
+    font-size: 2.2rem;
+    font-family: "LightsOut";
+    text-shadow:   
+        0 0 5px rgba(255, 189, 118, 0.505),
+        0 0 10px rgba(255, 189, 118, 0.7),
+        0 0 20px rgba(255, 189, 118, 0.6);
+}
+
+/* FORMULARIO */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20rem;
+    margin: 2rem auto;
+    line-height: 0.75;
+    font-family: "LightsOut";
+    font-weight: 900;
+    color: rgba(42, 22, 0, 0.877);
+}
+
+.formulario label {
+    font-size: x-large;
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+
+.formulario input {
+    font-family: "LightsOut";
+    font-size: large;
+    font-weight: 800;
+    border-radius: 3px;
+    border-color: rgba(42, 22, 0, 0.877);
+    ;
+    background-color: rgb(255, 255, 237);
+}
+
+.formulario select {
+    background-color: blanchedalmond;
+    font-family: "LightsOut";
+    font-size: large;
+    font-weight: 800;
+    border-radius: 7px;
+}
+
+.formulario option {
+    font-weight: 600;
+
+}
+
+/* dropdown */
+.dropdown-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.dropdown-btn {
+    background-color: rgba(71, 43, 0, 0.8);
+    color: rgb(255, 209, 149);
+    font-family: "LightsOut";
+    font-size: 1.3rem;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: rgba(90, 55, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.oculto {
+    display: none;
+}
+
+/* FIN FORMULARIO */
+.lista-canciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 4rem;
+    margin: 2rem 2rem;
+    margin-right: 4rem;
+}
+
+.cancion-card {
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 1rem;
+    font-family: "LightsOut";
+    color: rgb(250, 242, 230);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    background-color: rgba(71, 43, 0, 0.539);
+}
+
+.cancion-card:hover {
+    transform: scale(1.03);
+}
+
+.cancion-card h3 {
+    font-family: "OTGW";
+    font-weight: 500;
+    margin: 0;
+    color: rgb(255, 209, 149);
+}
+
+.cancion-card p {
+    margin: 0.3rem 0;
+    font-size: larger;
+}
+
+.cancion-card iframe {
+    margin-top: 1rem;
+}
+
+.cancion-card img {
+    width: 90px;
+} 
+
+.eliminar-btn {
+    background: none;
+    border: none;
+    color: rgba(243, 176, 75, 0.82);
+    width: 33px;
+    cursor: pointer;
+    position: relative;
+    bottom:80%;
+}
+
+.eliminar-btn:hover {
+    color:antiquewhite;
+}
+
+.control-audio {
+  margin-top: 0.5rem;
+  font-family: "LightsOut";
+
+}
+
+footer {
+    background:linear-gradient(to top, rgba(15, 9, 0, 0.539),  rgba(15, 9, 0, 0.539), #7c360000);
+    padding-top: 1rem;
+    margin-top: 5rem;
+    color: rgba(255, 199, 116, 0.901);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40vh;    
+}
+
+.footer1 {
+    font-family: "LightsOut";
+    margin-right: 5px;
+}
+
+.footer2 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(255, 199, 116, 0.57);
+
+}
