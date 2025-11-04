@@ -1,8 +1,3 @@
 {
-  "builds": [
-    { "src": "https://otgw-musiclibrary.vercel.app/", "use": "@vercel/static" }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "https://otgw-musiclibrary.vercel.app/" }
-  ]
+  "outputDirectory": "."
 }
