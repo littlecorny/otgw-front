@@ -224,6 +224,9 @@ footer {
 .footer2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgba(255, 199, 116, 0.901);
+    font-size: 13px;
+    position: relative;
+    top: 1.2px;
 }
 
 /* NOTIFICACIÓN */
