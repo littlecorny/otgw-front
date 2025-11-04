@@ -35,8 +35,6 @@ main {
     }
 }
 
-* { box-sizing: border-box; }
-
 /* LOGO */
 .logo {
     display: block;
@@ -253,6 +251,10 @@ footer {
 
 /* 📱 RESPONSIVE */
 @media screen and (max-width: 768px) {
+    body {
+        max-width: 100vh;
+    }
+    
     .logo {
         max-width: 80%;
         width: auto;
