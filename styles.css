@@ -162,6 +162,8 @@ h1 {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    overflow-x: visible; /* deja que el iframe haga scroll interno */
+
 }
 
 .cancion-card:hover {
@@ -186,10 +188,9 @@ h1 {
 
 /* Ajuste para iframes de Spotify */
 .cancion-card iframe {
-    width: 100%;
-    max-width: 100%;
-    min-height: 80px;
-    box-sizing: border-box;
+    min-width: 300px; /* ancho mínimo requerido por Spotify */
+    max-width: none; /* evita que CSS limite el ancho */
+    display: block;
 }
 
         .spotify-wrapper {
