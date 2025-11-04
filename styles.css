@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'OTGW';
-    src: url("assets/Tomeoftheunknown-3gL3.ttf");
+    src: url(".assets/Tomeoftheunknown-3gL3.ttf");
 }
 
 @font-face {
     font-family: 'LightsOut';
-    src: url("assets/LightsOut-8KyD.ttf");
+    src: url(".assets/LightsOut-8KyD.ttf");
 }
 
 body {
-    background-image: url("/assets/img.jpg");
+    background-image: url("/.assets/img.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
