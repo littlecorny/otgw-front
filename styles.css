@@ -20,6 +20,14 @@ body {
     /* Body y html ocupan toda la altura */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* asegura que ocupe toda la pantalla */
+
+}
+
+main {
+  flex: 1; /* empuja el footer hacia abajo */
 }
 
 @media screen and (max-width: 768px) {
@@ -191,17 +199,21 @@ h1 {
 
 }
 
+
+
 footer {
-    background:linear-gradient(to top, rgba(15, 9, 0, 0.539),  rgba(15, 9, 0, 0.539), #7c360000);
-    padding-top: 1rem;
-    margin-top: 5rem;
-    color: rgba(255, 199, 116, 0.901);
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40vh;    
+  background:linear-gradient(to top, rgba(15, 9, 0, 0.539),  rgba(15, 9, 0, 0.539), #7c360000);
+  color: rgba(255, 199, 116, 0.901);
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-family: "LightsOut";
 }
+
 
 .footer1 {
     font-family: "LightsOut";
