@@ -42,6 +42,25 @@ async function cargarCancionesNuevas() {
   }
 }
 
+// --- Función global para mostrar notificación + sonido ---
+function mostrarNotificacion(mensaje) {
+  const noti = document.getElementById("notificacion");
+  const sonido = document.getElementById("sonidoNotificacion");
+
+  noti.textContent = mensaje;
+  noti.classList.add("mostrar");
+
+  // 🔔 Reproducir campanita
+  sonido.currentTime = 0; // reinicia si ya sonó
+  sonido.play().catch(() => {
+    console.warn("El sonido no se pudo reproducir automáticamente");
+  });
+
+  setTimeout(() => {
+    noti.classList.remove("mostrar");
+  }, 2500);
+}
+
 // --- Cuando el usuario selecciona una canción ---
 selectCanciones.addEventListener("change", async () => {
   const idSeleccionado = selectCanciones.value;
@@ -64,7 +83,8 @@ selectCanciones.addEventListener("change", async () => {
         localStorage.setItem("cancionesAñadidas", JSON.stringify(almacenadas));
       }
 
-      alert(`"${seleccionada.titulo}" añadida al catálogo 🎶`);
+      // ✅ Aquí ya puedes llamar a la función global
+      mostrarNotificacion(`"${seleccionada.titulo}" añadida al catalogo ♪`);
 
       selectCanciones
         .querySelector(`option[value="${idSeleccionado}"]`)
@@ -72,6 +92,6 @@ selectCanciones.addEventListener("change", async () => {
       selectCanciones.value = "";
     }
   } catch (error) {
-    console.error("❌ Error al añadir la canción:", error);
+    console.error("❌ Error al añadir la cancion:", error);
   }
 });

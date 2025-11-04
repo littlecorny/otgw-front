@@ -225,3 +225,25 @@ footer {
     color: rgba(255, 199, 116, 0.57);
 
 }
+
+.notificacion {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  background: rgba(48, 29, 0, 0.856);
+  font-family: "LightsOut"; 
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(250, 242, 230);  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(15px);
+  z-index: 9999;
+}
+
+.notificacion.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
