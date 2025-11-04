@@ -37,10 +37,10 @@ main {
 .logo {
     display: block;
     position: relative;
-    margin: 2rem auto;
-    margin-top: 3rem;
+    margin: 2rem auto 0 auto;
     max-width: 300px;
     filter: brightness(1.7);
+    transition: max-width 0.3s ease;
 }
 
 /* PORTADA */
@@ -56,6 +56,7 @@ h1 {
         0 0 10px rgba(255, 189, 118, 0.7),
         0 0 20px rgba(255, 189, 118, 0.6);
     max-width: 90%;
+    width: fit-content;
 }
 
 /* FORMULARIO */
@@ -128,7 +129,7 @@ h1 {
     display: none;
 }
 
-/* LISTA DE CANCIONES (actualizado) */
+/* LISTA DE CANCIONES */
 .lista-canciones {
     display: flex;
     flex-wrap: wrap;
@@ -148,7 +149,7 @@ h1 {
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease;
-    max-width: 400px; /* 🔹 Tamaño natural del widget */
+    max-width: 400px;
     width: 100%;
 }
 
@@ -250,18 +251,26 @@ footer {
 }
 
 /* 📱 RESPONSIVE */
-@media screen and (max-width: 1024px) {
-    .lista-canciones {
-        justify-content: center;
-        gap: 2rem;
-    }
-}
-
 @media screen and (max-width: 768px) {
+    .logo {
+        max-width: 80%;
+        width: auto;
+    }
+
     h1 {
         font-size: 1.8rem;
-        margin: 1rem;
+        margin: 1rem auto;
         text-align: center;
+        width: fit-content;
+        max-width: 85%;
+    }
+
+    /* 🔗 hace que el logo no sea más ancho que el título */
+    .logo {
+        display: block;
+        margin: 1.5rem auto 0 auto;
+        width: 100%;
+        max-width: min(85%, 400px);
     }
 
     .formulario {
@@ -282,6 +291,7 @@ footer {
     }
 
     footer {
+        flex-direction: column;
         padding: 1rem;
         font-size: 0.9rem;
     }
