@@ -13,30 +13,27 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /* Escala la imagen para cubrir todo el contenedor */
     background-attachment: fixed;
-    /* Mantiene el fondo fijo al hacer scroll */
     height: 100%;
-    /* Body y html ocupan toda la altura */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* asegura que ocupe toda la pantalla */
-
+    min-height: 100vh;
 }
 
 main {
-  flex: 1; /* empuja el footer hacia abajo */
+  flex: 1;
 }
 
+/* Ajustes responsive de fondo */
 @media screen and (max-width: 768px) {
     body {
         background-position: top center;
-        /* Ajusta el enfoque del fondo en móviles */
     }
 }
 
+/* LOGO */
 .logo {
     display: block;
     position: relative;
@@ -44,22 +41,21 @@ main {
     margin-top: 3rem;
     max-width: 300px;
     filter: brightness(1.7);
-  
 }
 
-/* PORTADA */
 /* PORTADA */
 h1 {
     text-align: center;
     color: rgb(42, 22, 0);
-    margin: 1rem 13rem;
+    margin: 1rem auto;
     border-radius: 8px;
     font-size: 2.2rem;
     font-family: "LightsOut";
-    text-shadow:   
+    text-shadow:
         0 0 5px rgba(255, 189, 118, 0.505),
         0 0 10px rgba(255, 189, 118, 0.7),
         0 0 20px rgba(255, 189, 118, 0.6);
+    max-width: 90%;
 }
 
 /* FORMULARIO */
@@ -87,7 +83,6 @@ h1 {
     font-weight: 800;
     border-radius: 3px;
     border-color: rgba(42, 22, 0, 0.877);
-    ;
     background-color: rgb(255, 255, 237);
 }
 
@@ -101,10 +96,9 @@ h1 {
 
 .formulario option {
     font-weight: 600;
-
 }
 
-/* dropdown */
+/* DROPDOWN */
 .dropdown-form {
     display: flex;
     flex-direction: column;
@@ -134,25 +128,28 @@ h1 {
     display: none;
 }
 
-/* FIN FORMULARIO */
+/* LISTA DE CANCIONES (actualizado) */
 .lista-canciones {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 4rem;
-    margin: 2rem 2rem;
-    margin-right: 4rem;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem;
 }
 
+/* TARJETA */
 .cancion-card {
     border-radius: 1rem;
-    width: fit-content;
     padding: 1rem;
     font-family: "LightsOut";
     color: rgb(250, 242, 230);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
     background-color: rgba(71, 43, 0, 0.539);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    max-width: 400px; /* 🔹 Tamaño natural del widget */
+    width: 100%;
 }
 
 .cancion-card:hover {
@@ -173,47 +170,50 @@ h1 {
 
 .cancion-card iframe {
     margin-top: 1rem;
+    width: 100%;
+    min-height: 80px;
 }
 
 .cancion-card img {
     width: 90px;
-} 
+}
 
+/* BOTÓN ELIMINAR */
 .eliminar-btn {
     background: none;
     border: none;
     color: rgba(243, 176, 75, 0.82);
     width: 33px;
     cursor: pointer;
-    position: relative;
-    bottom:80%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .eliminar-btn:hover {
-    color:antiquewhite;
+    color: antiquewhite;
 }
 
+/* CONTROLES DE AUDIO */
 .control-audio {
-  margin-top: 0.5rem;
-  font-family: "LightsOut";
-
+    margin-top: 0.5rem;
+    font-family: "LightsOut";
 }
 
-
-
+/* FOOTER */
 footer {
-  background:linear-gradient(to top, rgba(15, 9, 0, 0.539),  rgba(15, 9, 0, 0.539), #7c360000);
+  background: linear-gradient(to top, rgba(15, 9, 0, 0.539), rgba(15, 9, 0, 0.539), #7c360000);
   color: rgba(255, 199, 116, 0.901);
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   font-family: "LightsOut";
+  flex-wrap: wrap;
 }
-
 
 .footer1 {
     font-family: "LightsOut";
@@ -221,11 +221,11 @@ footer {
 }
 
 .footer2 {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgba(255, 199, 116, 0.57);
-
 }
 
+/* NOTIFICACIÓN */
 .notificacion {
   position: fixed;
   top: 30px;
@@ -234,7 +234,8 @@ footer {
   font-family: "LightsOut"; 
   font-size: 1.1rem;
   font-weight: 700;
-  color: rgb(250, 242, 230);  padding: 12px 18px;
+  color: rgb(250, 242, 230);
+  padding: 12px 18px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   opacity: 0;
@@ -246,4 +247,42 @@ footer {
 .notificacion.mostrar {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* 📱 RESPONSIVE */
+@media screen and (max-width: 1024px) {
+    .lista-canciones {
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+
+    .lista-canciones {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        gap: 1.5rem;
+    }
+
+    .cancion-card {
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
 }
