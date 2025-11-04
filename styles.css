@@ -159,7 +159,6 @@ h1 {
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease;
-    max-width: 420px;
     width: 100%;
     text-align: center;
 }
