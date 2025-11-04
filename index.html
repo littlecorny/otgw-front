@@ -10,35 +10,42 @@
 <body>
 
   <main>
-  <img class="logo" src="assets/img2.webp">
-  <h1>Original Television Soundtrack</h1>
+    <img class="logo" src="assets/img2.webp" alt="Logo de Over the Garden Wall">
 
-  <!-- BOTÓN Y DROPDOWN -->
-  
-  <section class="dropdown-form">
-  <button id="toggleForm" class="dropdown-btn">Añadir canciones</button>
-    <div id="formContainer" class="formulario oculto">
-      <label for="cancion">Selecciona una cancion</label>
-      <select id="cancion" aria-placeholder="">
-        <option value="">Cargando canciones...</option>
-      </select> 
-    </div>
-  </section> 
+    <h1>Original Television Soundtrack</h1>
+
+    <!-- BOTÓN Y DROPDOWN -->
+    <section class="dropdown-form">
+      <button 
+        id="toggleForm" 
+        class="dropdown-btn" 
+        aria-expanded="false" 
+        aria-controls="formContainer">
+        Añadir canciones
+      </button>
+
+      <form id="formContainer" class="formulario oculto">
+        <label for="cancion">Selecciona una cancion</label>
+        <select id="cancion">
+          <option value="">Cargando canciones...</option>
+        </select> 
+      </form>
+    </section> 
+
+    <div class="lista-canciones" id="listaCanciones" aria-live="polite" aria-atomic="true"></div>
+
+  </main>
+
+  <footer>
+    <p class="footer1">littlecorny | "OTGW" Fanmade Music Library | <span class="footer2">&copy; 2025</span></p>
+  </footer>
+
+  <!-- NOTIFICACIÓN -->
+  <div id="notificacion" class="notificacion" role="status" aria-live="polite" aria-atomic="true"></div>
+  <audio id="sonidoNotificacion" src="assets/bell.wav" preload="auto"></audio>
 
   <script src="/script-formulario.js"></script>
-  <div class="lista-canciones" id="listaCanciones"></div>
   <script src="/script.js"></script>
 
-</main>
-<footer>
-  <p class="footer1">littlecorny | "OTGW" Fanmade Music Library | <p class="footer2">&copy; 2025</p>
-</footer>
-
-<section class="notificacion-cancion-agregada">
-<div id="notificacion" class="notificacion"></div>
-<audio id="sonidoNotificacion" src="assets/bell.wav" preload="auto"></audio>
-</section>
-
 </body>
-
 </html>

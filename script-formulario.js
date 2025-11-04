@@ -2,38 +2,34 @@ const boton = document.getElementById("toggleForm");
 const form = document.getElementById("formContainer");
 const selectCanciones = document.getElementById("cancion");
 
-// Mostrar/ocultar el formulario
+// Mostrar/ocultar formulario
 boton.addEventListener("click", async () => {
   form.classList.toggle("oculto");
-  boton.textContent = form.classList.contains("oculto")
-    ? "Añadir canciones"
-    : "Ocultar formulario";
+  const abierto = !form.classList.contains("oculto");
+  boton.textContent = abierto ? "Ocultar formulario" : "Añadir canciones";
+  boton.setAttribute("aria-expanded", abierto);
 
-  if (!form.classList.contains("oculto")) {
+  if (abierto) {
     await cargarCancionesNuevas();
+    selectCanciones.focus();
   }
 });
 
-// --- Cargar canciones nuevas del servidor ---
+// Cargar canciones nuevas
 async function cargarCancionesNuevas() {
   try {
     const res = await fetch(`${API_URL}/api/nuevas`);
     const canciones = await res.json();
-
-    const almacenadas =
-      JSON.parse(localStorage.getItem("cancionesAñadidas")) || [];
+    const almacenadas = JSON.parse(localStorage.getItem("cancionesAñadidas")) || [];
     const idsGuardados = almacenadas.map(c => c.id);
 
-    const disponibles = canciones.filter(
-      cancion => !idsGuardados.includes(cancion.id)
-    );
+    const disponibles = canciones.filter(c => !idsGuardados.includes(c.id));
 
     selectCanciones.innerHTML = '<option value=""> . . . </option>';
-
-    disponibles.forEach(cancion => {
+    disponibles.forEach(c => {
       const option = document.createElement("option");
-      option.value = cancion.id;
-      option.textContent = cancion.titulo;
+      option.value = c.id;
+      option.textContent = c.titulo;
       selectCanciones.appendChild(option);
     });
   } catch (error) {
@@ -42,26 +38,23 @@ async function cargarCancionesNuevas() {
   }
 }
 
-// --- Función global para mostrar notificación + sonido ---
+// Notificación accesible
 function mostrarNotificacion(mensaje) {
   const noti = document.getElementById("notificacion");
   const sonido = document.getElementById("sonidoNotificacion");
 
   noti.textContent = mensaje;
+  noti.setAttribute("role", "status");
+  noti.setAttribute("aria-live", "polite");
   noti.classList.add("mostrar");
 
-  // 🔔 Reproducir campanita
-  sonido.currentTime = 0; // reinicia si ya sonó
-  sonido.play().catch(() => {
-    console.warn("El sonido no se pudo reproducir automáticamente");
-  });
+  sonido.currentTime = 0;
+  sonido.play().catch(() => console.warn("El sonido no se pudo reproducir"));
 
-  setTimeout(() => {
-    noti.classList.remove("mostrar");
-  }, 2500);
+  setTimeout(() => noti.classList.remove("mostrar"), 2500);
 }
 
-// --- Cuando el usuario selecciona una canción ---
+// Añadir canción desde dropdown
 selectCanciones.addEventListener("change", async () => {
   const idSeleccionado = selectCanciones.value;
   if (!idSeleccionado) return;
@@ -74,24 +67,18 @@ selectCanciones.addEventListener("change", async () => {
     if (seleccionada) {
       agregarCancionAlGrid(seleccionada);
 
-      const almacenadas =
-        JSON.parse(localStorage.getItem("cancionesAñadidas")) || [];
-
-      const yaExiste = almacenadas.some(c => c.id === seleccionada.id);
-      if (!yaExiste) {
+      const almacenadas = JSON.parse(localStorage.getItem("cancionesAñadidas")) || [];
+      if (!almacenadas.some(c => c.id === seleccionada.id)) {
         almacenadas.push(seleccionada);
         localStorage.setItem("cancionesAñadidas", JSON.stringify(almacenadas));
       }
 
-      // ✅ Aquí ya puedes llamar a la función global
       mostrarNotificacion(`"${seleccionada.titulo}" añadida al catalogo ♪`);
 
-      selectCanciones
-        .querySelector(`option[value="${idSeleccionado}"]`)
-        ?.remove();
+      selectCanciones.querySelector(`option[value="${idSeleccionado}"]`)?.remove();
       selectCanciones.value = "";
     }
   } catch (error) {
-    console.error("❌ Error al añadir la cancion:", error);
+    console.error("Error al añadir la cancion:", error);
   }
 });

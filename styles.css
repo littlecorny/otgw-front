@@ -216,14 +216,17 @@ footer {
 }
 
 .footer1 {
-    font-family: "LightsOut";
     margin-right: 5px;
 }
 
 .footer2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgba(255, 199, 116, 0.57);
+    color: rgba(255, 199, 116, 0.901);
+    font-size: 13px;
+    position: relative;
+    top: 1.2px;
 }
+
 
 /* NOTIFICACIÓN */
 .notificacion {
