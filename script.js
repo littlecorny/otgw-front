@@ -70,7 +70,10 @@ function agregarCancionAlGrid(cancion) {
         iframe.style.maxWidth = "100%";
         iframe.style.height = "80px"; // puedes ajustar la altura si quieres
         iframe.style.boxSizing = "border-box";
-
+        const wrapper = document.createElement("div");
+          wrapper.classList.add("spotify-wrapper");
+          wrapper.appendChild(iframe);
+          div.appendChild(wrapper);
         div.appendChild(iframe);
 
 
