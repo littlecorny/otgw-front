@@ -251,9 +251,6 @@ footer {
 
 /* 📱 RESPONSIVE */
 @media screen and (max-width: 768px) {
-    body {
-        overflow-block: hidden;
-    }
     
     .logo {
         max-width: 80%;
