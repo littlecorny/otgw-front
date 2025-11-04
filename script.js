@@ -73,7 +73,7 @@ function agregarCancionAlGrid(cancion) {
         const wrapper = document.createElement("div");
           wrapper.classList.add("spotify-wrapper");
           wrapper.appendChild(iframe);
-          div.appendChild(wrapper);
+          div.appendChild(wrapper); // ✅ solo añadir el wrapper
         div.appendChild(iframe);
 
 

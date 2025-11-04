@@ -1,4 +1,6 @@
-/* fuentes */
+/* ===========================
+   FUENTES
+=========================== */
 @font-face {
     font-family: 'OTGW';
     src: url("assets/Tomeoftheunknown-3gL3.ttf");
@@ -9,7 +11,12 @@
     src: url("assets/LightsOut-8KyD.ttf");
 }
 
-/* estilos globales */
+/* ===========================
+   ESTILOS GLOBALES
+=========================== */
+* {
+    box-sizing: border-box; /* arregla posibles desbordes */
+}
 
 body {
     background-image: url("assets/img.jpg");
@@ -17,13 +24,13 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* Previene scroll lateral en móviles */
+    overflow-x: hidden; /* evita scroll lateral */
+    font-family: "LightsOut";
 }
 
 main {
@@ -34,20 +41,15 @@ main {
 @media screen and (max-width: 768px) {
     body {
         background-position: top center;
-        background-attachment: scroll; /* Evita bug en móviles */
+        background-attachment: scroll;
     }
 }
 
-/* Arregla posibles desbordes por sombras o transformaciones */
-* {
-    box-sizing: border-box;
-}
-
-/* "header" */
-
+/* ===========================
+   HEADER
+=========================== */
 .logo {
     display: block;
-    position: relative;
     margin: 2rem auto 0 auto;
     max-width: 300px;
     filter: brightness(1.7);
@@ -58,7 +60,6 @@ h1 {
     text-align: center;
     color: rgb(42, 22, 0);
     margin: 1rem auto;
-    border-radius: 8px;
     font-size: 2.2rem;
     font-family: "LightsOut";
     text-shadow:
@@ -67,10 +68,12 @@ h1 {
         0 0 20px rgba(255, 189, 118, 0.6);
     max-width: 90%;
     width: fit-content;
+    border-radius: 8px;
 }
 
-/* formulario */
-
+/* ===========================
+   FORMULARIO
+=========================== */
 .formulario {
     display: flex;
     flex-direction: column;
@@ -78,7 +81,6 @@ h1 {
     width: 20rem;
     margin: 2rem auto;
     line-height: 0.75;
-    font-family: "LightsOut";
     font-weight: 900;
     color: rgba(42, 22, 0, 0.877);
 }
@@ -106,8 +108,9 @@ h1 {
     font-weight: 600;
 }
 
-/* dropdown */
-
+/* ===========================
+   DROPDOWN
+=========================== */
 .dropdown-form {
     display: flex;
     flex-direction: column;
@@ -137,8 +140,9 @@ h1 {
     display: none;
 }
 
-/* lista */
-
+/* ===========================
+   LISTA DE CANCIONES
+=========================== */
 .lista-canciones {
     display: flex;
     flex-wrap: wrap;
@@ -147,23 +151,21 @@ h1 {
     margin: 2rem;
 }
 
-/* tarjetas canciones */
-
+/* ===========================
+   TARJETAS DE CANCIONES
+=========================== */
 .cancion-card {
     border-radius: 1rem;
     padding: 1rem;
-    font-family: "LightsOut";
     color: rgb(250, 242, 230);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     background-color: rgba(71, 43, 0, 0.539);
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* evita scroll horizontal */
     transition: transform 0.2s ease;
     max-width: 400px;
     width: 100%;
     text-align: center;
-    overflow-x: visible; /* deja que el iframe haga scroll interno */
-
 }
 
 .cancion-card:hover {
@@ -186,30 +188,25 @@ h1 {
     width: 90px;
 }
 
-/* Ajuste para iframes de Spotify */
-.cancion-card iframe {
-    min-width: 300px; /* ancho mínimo requerido por Spotify */
-    max-width: none; /* evita que CSS limite el ancho */
+/* ===========================
+   SPOTIFY EMBEDS
+=========================== */
+.spotify-wrapper {
+    width: 100%;
+    overflow: hidden; /* evita scroll lateral */
+    position: relative;
+}
+
+.spotify-wrapper iframe {
+    width: 100%;
+    height: 80px; /* ajustable */
+    border: 0;
     display: block;
 }
 
-        .spotify-wrapper {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    @media screen and (max-width: 768px) {
-        .spotify-wrapper iframe {
-            transform: scale(0.85);
-            transform-origin: 0 0;
-            width: 117.6%; /* compensa el scale */
-        }
-    }
-
-
-
-/* boton eliminar canciones */
+/* ===========================
+   BOTÓN ELIMINAR
+=========================== */
 .eliminar-btn {
     background: none;
     border: none;
@@ -225,14 +222,16 @@ h1 {
     color: antiquewhite;
 }
 
-/* controles audio */
-
+/* ===========================
+   CONTROLES DE AUDIO
+=========================== */
 .control-audio {
     margin-top: 0.5rem;
 }
 
-/* footer */
-
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     background: linear-gradient(to top, rgba(15, 9, 0, 0.539), rgba(15, 9, 0, 0.539), #7c360000);
     color: rgba(255, 199, 116, 0.901);
@@ -259,8 +258,9 @@ footer {
     top: 1.2px;
 }
 
-/* notificacion */
-
+/* ===========================
+   NOTIFICACIÓN
+=========================== */
 .notificacion {
     position: fixed;
     top: 30px;
@@ -284,13 +284,14 @@ footer {
     transform: translateY(0);
 }
 
-/* escala para movil */
-
+/* ===========================
+   RESPONSIVE MÓVIL
+=========================== */
 @media screen and (max-width: 768px) {
+
     .logo {
-        max-width: 80%;
-        width: auto;
         margin: 1.5rem auto 0 auto;
+        width: 100%;
         max-width: min(85%, 400px);
     }
 
@@ -315,12 +316,9 @@ footer {
         max-width: 400px;
     }
 
-    .cancion-card iframe {
-        width: 100%;
-        max-width: 100%;
+    .spotify-wrapper iframe {
+        height: 68px; /* altura reducida en móvil */
     }
-
-    
 
     footer {
         padding: 1rem;
