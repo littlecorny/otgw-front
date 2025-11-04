@@ -35,6 +35,8 @@ main {
     }
 }
 
+* { box-sizing: border-box; }
+
 /* LOGO */
 .logo {
     display: block;
