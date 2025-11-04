@@ -59,14 +59,21 @@ function agregarCancionAlGrid(cancion) {
       const url = new URL(cancion.link);
       const embedURL = `https://open.spotify.com/embed${url.pathname}`;
       const iframe = document.createElement("iframe");
-      iframe.src = embedURL;
-      iframe.width = "300";
-      iframe.height = "80";
-      iframe.frameBorder = "0";
-      iframe.allow =
-        "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-      iframe.loading = "lazy";
-      div.appendChild(iframe);
+        iframe.src = embedURL;
+        iframe.frameBorder = "0";
+        iframe.allow =
+          "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+        iframe.loading = "lazy";
+
+        // ⚡ Aquí cambiamos el ancho y alto
+        iframe.style.width = "100%";
+        iframe.style.maxWidth = "100%";
+        iframe.style.height = "80px"; // puedes ajustar la altura si quieres
+        iframe.style.boxSizing = "border-box";
+
+        div.appendChild(iframe);
+
+
     } catch (error) {
       console.error("Error al crear iframe de Spotify:", error);
     }
