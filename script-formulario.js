@@ -1,6 +1,3 @@
-// 🌍 URL base del backend
-const API_URL = "https://otgw-server-littlecorny.koyeb.app/"; // <-- cámbiala por tu dominio real
-
 const boton = document.getElementById("toggleForm");
 const form = document.getElementById("formContainer");
 const selectCanciones = document.getElementById("cancion");

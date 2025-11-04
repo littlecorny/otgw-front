@@ -1,5 +1,5 @@
 // 🌍 URL base del backend (Koyeb)
-const API_URL = "https://otgw-server-littlecorny.koyeb.app/"; // <-- cámbiala por tu dominio real
+const API_URL = "https://otgw-server-littlecorny.koyeb.app"; // <-- cámbiala por tu dominio real
 
 // Cargar canciones del servidor + locales
 async function cargarCanciones() {
