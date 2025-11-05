@@ -95,6 +95,3 @@ function eliminarCancion(id, div) {
   const nuevas = almacenadas.filter(c => c.id !== id);
   localStorage.setItem("cancionesAñadidas", JSON.stringify(nuevas));
 }
-
-import { SpeedInsights } from "@vercel/speed-insights/next"
-SpeedInsights ()
