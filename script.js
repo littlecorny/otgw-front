@@ -1,6 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
-
 // 🌍 URL base del backend (Koyeb)
 const API_URL = "https://otgw-server-littlecorny.koyeb.app";
 
@@ -98,3 +95,6 @@ function eliminarCancion(id, div) {
   const nuevas = almacenadas.filter(c => c.id !== id);
   localStorage.setItem("cancionesAñadidas", JSON.stringify(nuevas));
 }
+
+import { SpeedInsights } from "@vercel/speed-insights/next"
+SpeedInsights ()
