@@ -1,3 +1,6 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+
 // 🌍 URL base del backend (Koyeb)
 const API_URL = "https://otgw-server-littlecorny.koyeb.app";
 
