@@ -2,7 +2,7 @@ const boton = document.getElementById("toggleForm");
 const form = document.getElementById("formContainer");
 const selectCanciones = document.getElementById("cancion");
 
-// Mostrar/ocultar formulario
+// mostrar/ocultar formulario
 boton.addEventListener("click", async () => {
   form.classList.toggle("oculto");
   const abierto = !form.classList.contains("oculto");
@@ -15,7 +15,7 @@ boton.addEventListener("click", async () => {
   }
 });
 
-// Cargar canciones nuevas
+// cargar canciones nuevas
 async function cargarCancionesNuevas() {
   try {
     const res = await fetch(`${API_URL}/api/nuevas`);
@@ -38,14 +38,14 @@ async function cargarCancionesNuevas() {
   }
 }
 
-// Notificación accesible
+// notificación
 function mostrarNotificacion(mensaje) {
   const noti = document.getElementById("notificacion");
   const sonido = document.getElementById("sonidoNotificacion");
 
   noti.textContent = mensaje;
-  noti.setAttribute("role", "status");
-  noti.setAttribute("aria-live", "polite");
+  noti.setAttribute("role", "status"); 
+  noti.setAttribute("aria-live", "polite"); //accesibilidad
   noti.classList.add("mostrar");
 
   sonido.currentTime = 0;
@@ -54,7 +54,7 @@ function mostrarNotificacion(mensaje) {
   setTimeout(() => noti.classList.remove("mostrar"), 2500);
 }
 
-// Añadir canción desde dropdown
+// añadir canción desde el dropdown
 selectCanciones.addEventListener("change", async () => {
   const idSeleccionado = selectCanciones.value;
   if (!idSeleccionado) return;

@@ -1,7 +1,7 @@
-// 🌍 URL base del backend (Koyeb)
+// URL del backend (Koyeb)
 const API_URL = "https://otgw-server-littlecorny.koyeb.app";
 
-// Cargar canciones del servidor + locales
+// cargar canciones del servidor + locales
 async function cargarCanciones() {
   try {
     const res = await fetch(`${API_URL}/api/canciones`);
@@ -25,7 +25,7 @@ async function cargarCanciones() {
 
 cargarCanciones();
 
-// Crear tarjeta de canción
+// tarjeta de canción
 function agregarCancionAlGrid(cancion) {
   const lista = document.getElementById("listaCanciones");
   const div = document.createElement("div");
@@ -33,7 +33,7 @@ function agregarCancionAlGrid(cancion) {
   div.dataset.id = cancion.id;
   div.setAttribute("tabindex", "0"); // para teclado
 
-  // Info canción
+  // datos de canción
   const info = document.createElement("div");
   info.classList.add("cancion-info");
   info.innerHTML = `
@@ -42,7 +42,7 @@ function agregarCancionAlGrid(cancion) {
   `;
   div.appendChild(info);
 
-  // Reproductor o embed
+  // reproductor o embed de spotify
   if (cancion.link && cancion.link.toLowerCase().endsWith(".mp3")) {
     const audio = document.createElement("audio");
     audio.controls = true;
@@ -72,7 +72,7 @@ function agregarCancionAlGrid(cancion) {
     }
   }
 
-  // Botón eliminar
+  // botón para eliminar
   const eliminarBtn = document.createElement("button");
   eliminarBtn.classList.add("eliminar-btn");
   eliminarBtn.setAttribute("aria-label", `Eliminar ${cancion.titulo}`);
@@ -88,7 +88,7 @@ function agregarCancionAlGrid(cancion) {
   lista.appendChild(div);
 }
 
-// Eliminar canción del DOM y localStorage
+// eliminar canción del DOM y localStorage
 function eliminarCancion(id, div) {
   div.remove();
   let almacenadas = JSON.parse(localStorage.getItem("cancionesAñadidas")) || [];

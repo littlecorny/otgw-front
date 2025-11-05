@@ -7,15 +7,17 @@
   <link rel="icon" href="assets/favicon.ico">
   <link href="styles.css" rel="stylesheet">
 </head>
-<body>
 
+<body>
   <main>
+
     <img class="logo" src="assets/img2.webp" alt="Logo de Over the Garden Wall">
 
     <h1>Original Television Soundtrack</h1>
 
     <!-- BOTÓN Y DROPDOWN -->
     <section class="dropdown-form">
+
       <button 
         id="toggleForm" 
         class="dropdown-btn" 
@@ -24,12 +26,14 @@
         Añadir canciones
       </button>
 
+      <!-- FORMULARIO -->
       <form id="formContainer" class="formulario oculto">
         <label for="cancion">Selecciona una cancion</label>
         <select id="cancion">
           <option value="">Cargando canciones...</option>
         </select> 
       </form>
+
     </section> 
 
     <div class="lista-canciones" id="listaCanciones" aria-live="polite" aria-atomic="true"></div>
@@ -44,20 +48,24 @@
   <div id="notificacion" class="notificacion" role="status" aria-live="polite" aria-atomic="true"></div>
   <audio id="sonidoNotificacion" src="assets/bell.wav" preload="auto"></audio>
 
+  
+  <!-- SCRIPTS -->
   <script src="/script-formulario.js"></script>
   <script src="/script.js"></script>
   
-  <!-- SPEED INSIGHTS -->
-  <script>
-  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <!-- SCRIPTS DE VERCEL -->
 
-  <!-- ANALYTICS -->
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+    <!-- speed insights -->
+    <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- analytics -->
+    <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>

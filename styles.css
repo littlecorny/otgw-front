@@ -1,3 +1,4 @@
+/* FUENTES */
 @font-face {
     font-family: 'OTGW';
     src: url("assets/Tomeoftheunknown-3gL3.ttf");
@@ -7,6 +8,8 @@
     font-family: 'LightsOut';
     src: url("assets/LightsOut-8KyD.ttf");
 }
+
+/*  */
 
 body {
     background-image: url("assets/img.jpg");
@@ -27,7 +30,8 @@ main {
     flex: 1;
 }
 
-/* Ajustes responsive de fondo */
+
+/* AJUSTE RESPONSIVO DEL FONDO */
 @media screen and (max-width: 768px) {
     body {
         background-position: top center;
@@ -45,7 +49,6 @@ main {
     transition: max-width 0.3s ease;
 }
 
-/* PORTADA */
 h1 {
     text-align: center;
     color: rgb(42, 22, 0);
@@ -98,6 +101,7 @@ h1 {
     font-weight: 600;
 }
 
+
 /* DROPDOWN */
 .dropdown-form {
     display: flex;
@@ -128,6 +132,7 @@ h1 {
     display: none;
 }
 
+
 /* LISTA DE CANCIONES */
 .lista-canciones {
     display: flex;
@@ -136,6 +141,7 @@ h1 {
     gap: 3rem;
     margin: 2rem;
 }
+
 
 /* TARJETA */
 .cancion-card {
@@ -178,6 +184,7 @@ h1 {
     width: 90px;
 }
 
+
 /* BOTÓN ELIMINAR */
 .eliminar-btn {
     background: none;
@@ -194,11 +201,13 @@ h1 {
     color: antiquewhite;
 }
 
+
 /* CONTROLES DE AUDIO */
 .control-audio {
     margin-top: 0.5rem;
     font-family: "LightsOut";
 }
+
 
 /* FOOTER */
 footer {
@@ -252,7 +261,8 @@ footer {
     transform: translateY(0);
 }
 
-/* 📱 RESPONSIVE */
+
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
     
     .logo {
@@ -268,7 +278,7 @@ footer {
         max-width: 85%;
     }
 
-    /* 🔗 hace que el logo no sea más ancho que el título */
+    /* para que el logo no sea más ancho que el título */
     .logo {
         display: block;
         margin: 1.5rem auto 0 auto;
