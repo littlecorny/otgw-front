@@ -95,6 +95,6 @@ También fue mi primera oportunidad para aprender a publicar mis proyectos por s
 📬 Contacto
 
 📧 littlecorny | https://github.com/littlecorny
-🌐 Tu portfolio o LinkedIn
+🌐 https://carlapajuelopaniag.wixsite.com/portfolio
 
 Proyecto creado con fines educativos y de portfolio.
