@@ -17,11 +17,11 @@
 
 otgw-front/
 │
-├── assets/                 # Recursos (imágenes, fuentes, iconos, audio)
-├── index.html              # Página principal
-├── styles.css              # Estilos
-├── script-formulario.js    # Creación del formulario y las notificaciones
-└── script.js               # Renderizado de las canciones y creación de tarjetas
+├── assets/ # Recursos (imágenes, fuentes, iconos, audio)
+├── index.html # Página principal
+├── styles.css # Estilos principales del sitio
+├── script-formulario.js # Creación del formulario y notificaciones
+└── script.js # Renderizado de canciones y creación de tarjetas
 
 ---
 
