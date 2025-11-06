@@ -1,82 +1,100 @@
-# OTGW Fanmade Music Library - Frontend
+# 🌲 Over the Garden Wall | Fanmade Music Library  
 
-Esta es la interfaz web de la biblioteca fanmade de *Over the Garden Wall*. Permite visualizar, reproducir y añadir canciones al catálogo.
+> Biblioteca musical interactiva basada en la banda sonora de la serie *Over the Garden Wall*.  
+> Proyecto de práctica web con integración de Spotify y gestión de canciones en LocalStorage.
 
-## 🌐 Despliegue
+![Vista general de la web](image.png)
+---
 
-El frontend está publicado en **Vercel**:
+## 🔗 Enlaces
 
-[https://otgw-musiclibrary-nu.vercel.app/]
+- **Despliegue del proyecto:** [🔗 https://otgw-musiclibrary-nu.vercel.app/l](#)  
+- **Backend (API en Koyeb):** [🔗 https://otgw-server-littlecorny.koyeb.app/](#)  
 
-## 📦 Estructura de archivos
+---
+
+# Estructura
 
 otgw-front/
-├─ assets/ # Imágenes, fuentes, iconos, audio de notificación
-├─ index.html # Página principal
-├─ styles.css # Estilos globales
-├─ script.js # Lógica principal de carga y reproducción de canciones
-├─ script-formulario.js # Lógica del formulario y dropdown
+│
+├── assets/                 # Recursos (imágenes, fuentes, iconos, audio)
+├── index.html              # Página principal
+├── styles.css              # Estilos
+├── script-formulario.js    # Creación del formulario y las notificaciones
+└── script.js               # Renderizado de las canciones y creación de tarjetas
 
-## 🎯 OBJETIVO 1. HTML — Estructura y semántica
+---
 
-El html de este proyecto es relativamente sencillo, ya que la mayoría del contenido se crea a través del script, que es quien se encarga de generar las tarjetas que se usan para las canciones. 
+## 🧭 Descripción Funcional  
 
-Teniendo eso en cuenta, vamos a centrarnos en la parte del formulario:
+**Over the Garden Wall | Fanmade Music Library** es una aplicación web que permite:  
+- Visualizar y reproducir canciones desde un backend (API propia).  
+- Integrar widgets de **Spotify** o reproducir archivos `.mp3` locales.  
+- Añadir y eliminar canciones manualmente al almacenamiento local.  
 
-<!-- BOTÓN Y DROPDOWN -->
+El enfoque principal es mostrar una interfaz bonita, limpia e interactiva, optimizada para ser intuitiva y sencilla.
 
-<section class="dropdown-form" aria-labelledby="toggleForm">
+---
 
-  <button 
-    id="toggleForm" 
-    class="dropdown-btn" 
-    aria-expanded="false" 
-    aria-controls="formContainer">
-    Añadir canciones
-  </button>
+## 🧩 Arquitectura y Stack  
 
-  <!-- FORMULARIO -->
-  <form id="formContainer" class="formulario oculto">
-    <label for="cancion">Selecciona una cancion</label>
-    <select id="cancion">
-      <option value="">Cargando canciones...</option>
-    </select> 
-  </form>
+| Capa |  Tecnologías | Descripción |
+|------|--------------|-------------|
+| **Frontend** | HTML5, CSS3, JavaScript | Interfaz, renderizado de tarjetas y control del reproductor. |
+| **Backend (API)** | Node.js + Express  | Provee el listado de canciones |
+| **Hosting** | Vercel (Front) + Koyeb (Back) | Despliegue del servidor |
 
-</section> 
+---
 
+## ⚙️ Guía de Instalación y Ejecución  
 
-Primero, he usado la etiqueta <section> para agrupar el formulario y el botón como un bloque temático dentro de la página; al usuario no le proporciona algo en concreto, pero para mí (desarrolladora) me permite editar este elemento y todos sus hijos como un solo bloque en el CSS.
+1. Clona el repositorio del frontend:  
+   ```bash
+   git clone https://github.com/littlecorny/otgw-front
+   cd otgw-front
 
+2. Abre el archivo principal `index.html` y ejecútala con LiveServer
 
-A continuación, he usado la etiqueta <form>:
+3. Si lo ejecutas localmente, asegúrate de actualizar la URL del backend en script.js:
 
-  <form id="formContainer" class="formulario oculto">
-    <label for="cancion">Selecciona una cancion</label>
-    <select id="cancion">
-        <option value="">Cargando canciones...</option>
-      </select> 
-  </form>
+    const API_URL = "https://otgw-server-littlecorny.koyeb.app";
 
-Su función es, con los datos que le proporciona el servidor, crear un dropdown en el que el usuario pueda elegir cualquiera de las canciones existentes, seleccionarla, y añadirla al grid visual. 
-Elegí esta etiqueta ya que crear los datos desde cero, siendo una página temática y muy específica, me pareció contraproducente, teniendo en cuenta que habría que añadir embeds de spotify. Por lo tanto, mantener un elemento interactivo, pero con las facilidades necesarias para el usuario, me pareció lo más correcto.
+4. ¡Listo!
 
 
-Por último he usado la etiqueta <button>
-
-<button 
-    id="toggleForm" 
-    class="dropdown-btn" 
-    aria-expanded="false" 
-    aria-controls="formContainer">
-    Añadir canciones
-  </button>
-
-En esta etiqueta podríamos decir que "contenemos" el formulario. 
-<!-- TERMINAR ESTA PARTE -->
-
-Este front no tiene nav, header o similares, ya que no está pensado para tener páginas enlazadas o navegación; su propósito es actuar como un marco en el que poder presentar el verdadero punto de la web, que es las canciones del servidor.  
+---
 
 
-## 🎨 OBJETIVO 2. CSS — Estilo y diseño
+# 🛠️ Conceptos Técnicos Aplicados
 
+- Consumo de API REST mediante fetch() con asincronía y async/await.
+
+- Render dinámico del DOM (creación de tarjetas y reproductores desde JS).
+
+- Gestión de estado local con localStorage para persistencia sin base de datos.
+
+- Integración de iframes de Spotify, controlando tiempos de carga para evitar bloqueos.
+
+- Optimización visual responsiva sin frameworks externos.
+
+
+# 🧠 Reflexión y Aprendizaje
+
+Este proyecto nació como una práctica de CRUD y servidores para clase, de la cual he aprendido a:
+
+- Conectar el front y el end y leer los datos del CRUD. 
+
+- Gestionar asincronía y evitar bloqueos de la app.
+
+- Diseñar una interfaz funcional, estética y accesible.
+
+También fue mi primera oportunidad para aprender a publicar mis proyectos por separado en páginas como Vercel y Koyeb, conectándolos entre sí y entendiendo las necesidades de una aplicación online.
+
+---
+
+📬 Contacto
+
+📧 littlecorny | https://github.com/littlecorny
+🌐 Tu portfolio o LinkedIn
+
+Proyecto creado con fines educativos y de portfolio.
