@@ -100,7 +100,7 @@ function eliminarCancion(id, div) {
 //ping al backend
 
 function despertarBackend() {
-  fetch("https://otgw-server.onrender.com") // tu URL aquí
+  fetch("https://otgw-server.onrender.com/ping") // tu URL aquí
     .then(response => response.json())
     .then(data => console.log("Backend despertado:", data))
     .catch(err => console.log("Error al despertar backend:", err));
