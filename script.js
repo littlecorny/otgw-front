@@ -4,6 +4,7 @@ const API_URL = "https://otgw-server.onrender.com";
 // cargar canciones del servidor + locales
 async function cargarCanciones() {
   try {
+    await despertarBackend();
     const res = await fetch(`${API_URL}/api/canciones`);
     const cancionesServidor = await res.json();
 
@@ -18,6 +19,7 @@ async function cargarCanciones() {
       await new Promise(r => setTimeout(r, 300));
     }
   } catch (error) {
+    console.error("Error al despertar el backend:", error);
     console.error("Error cargando canciones:", error);
     document.getElementById("listaCanciones").innerHTML = "<p>Error al cargar los datos</p>";
   }
@@ -99,14 +101,21 @@ function eliminarCancion(id, div) {
 
 //ping al backend
 
-function despertarBackend() {
-  fetch("https://otgw-server.onrender.com/ping") // tu URL aquí
-    .then(response => response.json())
-    .then(data => console.log("Backend despertado:", data))
-    .catch(err => console.log("Error al despertar backend:", err));
+
+async function despertarBackend() {
+  try {
+    const res = await fetch(`${API_URL}/ping`);
+    const data = await res.json();
+    console.log("Backend despertado:", data);
+  } catch (err) {
+    console.error("Error al despertar backend:", err);
+  }
 }
 
-// Llamamos a la función cuando carga la página
-window.addEventListener("load", () => {
-  despertarBackend();
-});
+async function iniciarApp() {
+  await despertarBackend(); // espera a que el servidor despierte
+  cargarCanciones();        // luego carga canciones
+}
+
+window.addEventListener("load", iniciarApp);
+
