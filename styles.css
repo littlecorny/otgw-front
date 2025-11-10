@@ -269,8 +269,6 @@ footer {
 @media screen and (max-width: 768px) {
     
     .logo {
-        position: relative;
-        left: 50%;
         display: block;
         margin: 1.5rem auto 0 auto; /* centra horizontalmente */
         width: auto;                /* respeta proporciones */
@@ -278,8 +276,6 @@ footer {
     }
 
     h1 {
-        position: relative;
-        left: 50%;
         font-size: 1.8rem;
         margin: 1rem auto;  /* centrado horizontal */
         text-align: center;
