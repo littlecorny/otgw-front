@@ -269,20 +269,18 @@ footer {
 @media screen and (max-width: 768px) {
     
     .logo {
-        max-width: 80%;
-        width: auto;
-        margin-left: 1rem;
-
+        display: block;
+        margin: 1.5rem auto 0 auto; /* centra horizontalmente */
+        width: auto;                /* respeta proporciones */
+        max-width: min(85%, 400px); /* no más ancho que el título */
     }
 
     h1 {
         font-size: 1.8rem;
+        margin: 1rem auto;  /* centrado horizontal */
         text-align: center;
-        margin: 1rem auto;
-        text-align: center;
-        width: fit-content;
         max-width: 85%;
-       
+
     }
 
     /* para que el logo no sea más ancho que el título */
