@@ -95,3 +95,18 @@ function eliminarCancion(id, div) {
   const nuevas = almacenadas.filter(c => c.id !== id);
   localStorage.setItem("cancionesAñadidas", JSON.stringify(nuevas));
 }
+
+
+//ping al backend
+
+function despertarBackend() {
+  fetch("https://otgw-server.onrender.com") // tu URL aquí
+    .then(response => response.json())
+    .then(data => console.log("Backend despertado:", data))
+    .catch(err => console.log("Error al despertar backend:", err));
+}
+
+// Llamamos a la función cuando carga la página
+window.addEventListener("load", () => {
+  despertarBackend();
+});
