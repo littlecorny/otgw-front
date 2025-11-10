@@ -267,7 +267,10 @@ footer {
 
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
-    
+    body {
+        align-items: center; /* centra horizontalmente todos los hijos */
+    }
+
     .logo {
         display: block;
         margin: 1.5rem auto 0 auto; /* centra horizontalmente */
