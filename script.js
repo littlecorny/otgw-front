@@ -12,7 +12,10 @@ async function cargarCanciones() {
     const contenedor = document.getElementById("listaCanciones");
     contenedor.innerHTML = "";
 
-    const todas = [...cancionesServidor, ...almacenadas];
+    const todas = [
+      ...cancionesServidor,
+      ...almacenadas.filter(a => !cancionesServidor.some(c => c.id === a.id))
+    ];
 
     for (const cancion of todas) {
       agregarCancionAlGrid(cancion);
