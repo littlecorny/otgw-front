@@ -28,7 +28,6 @@ async function cargarCanciones() {
   }
 }
 
-cargarCanciones();
 
 // tarjeta de canción
 function agregarCancionAlGrid(cancion) {
