@@ -59,6 +59,7 @@ h1 {
     text-shadow: 0 0 5px rgba(255, 189, 118, 0.505), 0 0 10px rgba(255, 189, 118, 0.7), 0 0 20px rgba(255, 189, 118, 0.6);
     max-width: 90%;
     width: fit-content;
+
 }
 
 /* FORMULARIO */
@@ -108,6 +109,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin: 2rem auto;
+    margin-left: 1rem;
 }
 
 .dropdown-btn {
@@ -269,14 +271,18 @@ footer {
     .logo {
         max-width: 80%;
         width: auto;
+        margin-left: 1rem;
+
     }
 
     h1 {
         font-size: 1.8rem;
+        text-align: center;
         margin: 1rem auto;
         text-align: center;
         width: fit-content;
         max-width: 85%;
+       
     }
 
     /* para que el logo no sea más ancho que el título */
