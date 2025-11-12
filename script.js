@@ -115,8 +115,19 @@ async function despertarBackend() {
 }
 
 async function iniciarApp() {
-  await despertarBackend(); // espera a que el servidor despierte
-  cargarCanciones();        // luego carga canciones
+  const loading = document.getElementById("loading");
+  loading.classList.remove("hidden"); // mostrar
+
+  try {
+    await despertarBackend(); // puede tardar
+    await cargarCanciones();  // luego carga canciones
+  } catch (err) {
+    console.error("Error iniciando la app:", err);
+    document.getElementById("listaCanciones").innerHTML =
+      "<p>Error al cargar la aplicación.</p>";
+  } finally {
+    loading.classList.add("hidden"); // ocultar siempre al final
+  }
 }
 
 window.addEventListener("load", iniciarApp);
