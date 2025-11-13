@@ -9,7 +9,7 @@
 ## 🔗 Enlaces
 
 - **Despliegue del proyecto:** [🔗 https://otgw-musiclibrary-nu.vercel.app/l](#)  
-- **Backend (API en Koyeb):** [🔗 https://otgw-server-littlecorny.koyeb.app/](#)  
+- **Backend (API en Render):** [🔗 https://otgw-server.onrender.com](#)  
 
 ---
 
@@ -42,7 +42,7 @@ El enfoque principal es mostrar una interfaz bonita, limpia e interactiva, optim
 |------|--------------|-------------|
 | **Frontend** | HTML5, CSS3, JavaScript | Interfaz, renderizado de tarjetas y control del reproductor. |
 | **Backend (API)** | Node.js + Express  | Provee el listado de canciones |
-| **Hosting** | Vercel (Front) + Koyeb (Back) | Despliegue del servidor |
+| **Hosting** | Vercel (Front) + Render (Back) | Despliegue del servidor |
 
 ---
 
@@ -57,7 +57,7 @@ El enfoque principal es mostrar una interfaz bonita, limpia e interactiva, optim
 
 3. Si lo ejecutas localmente, asegúrate de actualizar la URL del backend en script.js:
 
-    const API_URL = "https://otgw-server-littlecorny.koyeb.app";
+    const API_URL = "https://otgw-server.onrender.com";
 
 4. ¡Listo!
 
@@ -88,7 +88,7 @@ Este proyecto nació como una práctica de CRUD y servidores para clase, de la c
 
 - Diseñar una interfaz funcional, estética y accesible.
 
-También fue mi primera oportunidad para aprender a publicar mis proyectos por separado en páginas como Vercel y Koyeb, conectándolos entre sí y entendiendo las necesidades de una aplicación online.
+También fue mi primera oportunidad para aprender a publicar mis proyectos por separado en páginas como Vercel y Render, conectándolos entre sí y entendiendo las necesidades de una aplicación online.
 
 ---
 
