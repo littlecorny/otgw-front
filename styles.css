@@ -12,30 +12,42 @@
 /*  */
 
 body {
-    background-image: url("assets/img.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+    font-family: "LightsOut";
 }
+
+/* para arreglar el fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("assets/img.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1; /* para que quede detrás de todo */
+    transform: scale(1);
+    transition: none;
+}
+
 
 main {
     flex: 1;
 }
 
 
-/* AJUSTE RESPONSIVO DEL FONDO */
+/* En móviles, desactivamos efectos conflictivos */
 @media screen and (max-width: 768px) {
-    body {
-        background-position: top center;
+    body::before {
         background-attachment: scroll;
+        background-position: top center;
+        background-size: cover;
     }
 }
 
@@ -317,6 +329,8 @@ footer {
     }
 }
 
+/* loading screen */
+
 .loading-overlay {
   position: fixed;
   inset: 0;
@@ -327,7 +341,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
   z-index: 9999;
 }
 
@@ -339,6 +352,13 @@ footer {
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
   margin-bottom: 15px;
+}
+
+#loading p {
+    align-items: center;
+    font-size: 1.5rem;
+    overflow: auto;
+
 }
 
 @keyframes spin {
