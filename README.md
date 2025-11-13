@@ -14,7 +14,7 @@
 ---
 
 # Estructura
-
+```plaintext
 otgw-front/
 │
 ├── assets/ # Recursos (imágenes, fuentes, iconos, audio)
@@ -22,7 +22,7 @@ otgw-front/
 ├── styles.css # Estilos principales del sitio
 ├── script-formulario.js # Creación del formulario y notificaciones
 └── script.js # Renderizado de canciones y creación de tarjetas
-
+```
 ---
 
 ## 🧭 Descripción Funcional  
@@ -49,16 +49,16 @@ El enfoque principal es mostrar una interfaz bonita, limpia e interactiva, optim
 ## ⚙️ Guía de Instalación y Ejecución  
 
 1. Clona el repositorio del frontend:  
-   ```bash
+```bash
    git clone https://github.com/littlecorny/otgw-front
    cd otgw-front
-
+```
 2. Abre el archivo principal `index.html` y ejecútala con LiveServer
 
 3. Si lo ejecutas localmente, asegúrate de actualizar la URL del backend en script.js:
-
+```bash
     const API_URL = "https://otgw-server.onrender.com";
-
+```
 4. ¡Listo!
 
 
