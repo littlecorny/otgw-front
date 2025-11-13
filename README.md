@@ -92,7 +92,7 @@ También fue mi primera oportunidad para aprender a publicar mis proyectos por s
 
 ---
 
-📬 Contacto
+#### 📬 Contacto
 
 📧 littlecorny | https://github.com/littlecorny
 🌐 https://carlapajuelopaniag.wixsite.com/portfolio
